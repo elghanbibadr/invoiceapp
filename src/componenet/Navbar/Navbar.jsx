@@ -4,12 +4,11 @@ import logo from '../../assets/logo.svg'
 import sunLogo from '../../assets/icon-sun.svg'
 import '../Navbar/Navbar.css'
 import { useContext } from 'react'
-import { appContext } from '../Store/appContext'
+import { AppContext } from '../Store/AppContext'
 const Navbar = () => {
-  const ctx=useContext(appContext);
+  const ctx=useContext(AppContext);
   // console.log(ctx)
  const handleDarkThemIconClicked=()=>{
-  ctx.setThem('light')
   console.log(ctx)
  };
   return (

@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import Navbar from './componenet/Navbar/Navbar'
-import { appContext } from './componenet/Store/appContext'
+import { AppContextProvider } from './componenet/Store/AppContext'
 const App = () => {
-  const [them,setThem]=useState('dark')
-  console.log(them)
-  return (
-    <appContext.Provider value={{them,setThem}}>
+  return(
+    <AppContextProvider>
       <Navbar/>
-    </appContext.Provider>
+    </AppContextProvider>
   )
 }
 

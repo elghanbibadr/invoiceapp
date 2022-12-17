@@ -1,9 +1,9 @@
 import { createContext,useState } from "react";
 
 
-export const appContext=createContext(null);
+export const AppContext=createContext(null);
 
-export const appContextProvider=({children})=>{
+export const AppContextProvider=({children})=>{
     const [them,setThem]=useState('dark')
     const [clickedInvoice,setClickedInvoice]=useState(null);
 
@@ -14,5 +14,5 @@ export const appContextProvider=({children})=>{
         setClickedInvoice
     }
 
-    return <appContextProvider value={value}>{children}</appContextProvider>
+    return <AppContextProvider value={value} >{children}</AppContextProvider>
 }
