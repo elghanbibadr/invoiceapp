@@ -1,8 +1,9 @@
 import React from 'react'
+import Navbar from './componenet/Navbar/Navbar'
 
 const App = () => {
   return (
-    <p className='p-4 text-rose-400'>App hello</p>
+    <Navbar/>
   )
 }
 
