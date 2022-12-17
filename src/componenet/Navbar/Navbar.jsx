@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import avatar from '../../assets/image-avatar.jpg'
 import logo from '../../assets/logo.svg'
 import sunLogo from '../../assets/icon-sun.svg'
 import '../Navbar/Navbar.css'
 import { useContext } from 'react'
 import { AppContext } from '../Store/AppContext'
+
 const Navbar = () => {
-  const ctx=useContext(AppContext);
-  // console.log(ctx)
+   const {them,setThem}=useContext(AppContext);
  const handleDarkThemIconClicked=()=>{
-  console.log(ctx)
+   setThem( prv=> prv ==='light' ? "dark" :"light")
  };
   return (
    <header>

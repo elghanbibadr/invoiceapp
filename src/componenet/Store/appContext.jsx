@@ -14,5 +14,5 @@ export const AppContextProvider=({children})=>{
         setClickedInvoice
     }
 
-    return <AppContextProvider value={value} >{children}</AppContextProvider>
+    return <AppContext.Provider value={value} >{children}</AppContext.Provider>
 }
