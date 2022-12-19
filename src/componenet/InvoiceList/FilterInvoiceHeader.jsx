@@ -1,11 +1,16 @@
-import React ,{useContext} from 'react'
+import React ,{useContext, useState} from 'react'
 import { AppContext } from '../Store/AppContext'
 import iconArrow from '../../assets/icon-arrow-down.svg'
 import FilterInvoiceSelectOption from './FilterInvoiceSelectOption'
 
 const FilterInvoiceHeader = () => {
     const {invoiceNumber}=useContext(AppContext);
-
+    const [arrowRotated,setArrowRotated]=useState(false);
+    const [isChoicesListVisible,setIsChoicesListVisible]=useState(false)
+    const handleFilterArrowClicked=()=>{
+        setArrowRotated(!arrowRotated);
+        setIsChoicesListVisible(!isChoicesListVisible)
+    }
 
  return(
 <div className='filterInvoiceBox flex justify-between'>
@@ -16,9 +21,9 @@ const FilterInvoiceHeader = () => {
      <div className="filerInvoiceChange">
         <div className="filterInvoiceLabel flex items-center">
             <p>filter</p>
-            <img  className='iconArrow ml-2 ' src={iconArrow}/>
+            <img  onClick={handleFilterArrowClicked} className={`iconArrow ml-2 ${arrowRotated ? 'rotate-180' : 'rotate-0'}`} src={iconArrow}/>
         </div>
-       <FilterInvoiceSelectOption/>
+       <FilterInvoiceSelectOption isVisible={isChoicesListVisible}/>
     </div>
     </div>
  )
