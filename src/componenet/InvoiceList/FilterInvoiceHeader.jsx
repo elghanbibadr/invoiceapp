@@ -18,13 +18,13 @@ const FilterInvoiceHeader = () => {
          <h1>Invoices</h1>
          <p>  {invoiceNumber}   invoice</p>
      </div>
-     <div className="filerInvoiceChange">
+     <div className="filerInvoiceChange flex relative items-center">
         <div className="filterInvoiceLabel flex items-center">
             <p>filter</p>
-            <img  onClick={handleFilterArrowClicked} className={`iconArrow ml-2 ${arrowRotated ? 'rotate-180' : 'rotate-0'}`} src={iconArrow}/>
+            <img  onClick={handleFilterArrowClicked} className={`iconArrow m-2 ${arrowRotated ? 'rotate-180' : 'rotate-0'}`} src={iconArrow}/>
         </div>
        <FilterInvoiceSelectOption isVisible={isChoicesListVisible}/>
-       <Button btnWithIcon={true} id='bg-cyan' name='New Invoice'/>
+       <Button btnWithIcon={true} id='bg-cyan' name='New'/>
     </div>
     </div>
  )

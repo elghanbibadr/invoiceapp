@@ -4,7 +4,7 @@ import plusIcon from '../../assets/icon-plus.svg'
 const Button = (props) => {
     if (!props.btnWithIcon){
   return (
-    <button id={props.id} className=' flex items-center btn text-white font-bold p-3 rounded-3xl' > {props.name} </button>
+    <button id={props.id} className=' flex items-center btn text-white font-bold p-2 rounded-full' > {props.name} </button>
   )
     }else{
         return (
