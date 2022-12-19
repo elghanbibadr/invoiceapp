@@ -10,6 +10,14 @@ body{
 
 }
 
+
+.mycontainer{
+  max-width: 55rem;
+  margin-inline: auto;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
 h1{
    font-size: 1.4rem; 
   font-weight: bold;

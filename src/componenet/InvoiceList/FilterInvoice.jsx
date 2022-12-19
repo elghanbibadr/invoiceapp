@@ -2,7 +2,9 @@ import React from 'react'
 import FilterInvoiceHeader from './FilterInvoiceHeader'
 const FilterInvoice = () => {
   return (
-   <FilterInvoiceHeader/>
+   <div className="mycontainer">
+    <FilterInvoiceHeader/>
+    </div>
     
   )
 }
