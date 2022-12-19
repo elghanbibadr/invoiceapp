@@ -14,6 +14,7 @@ body{
 .mycontainer{
   max-width: 55rem;
   margin-inline: auto;
+  padding: 10px;
   margin-top: 2rem;
 }
 
