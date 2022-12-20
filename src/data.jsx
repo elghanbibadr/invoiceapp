@@ -1,4 +1,4 @@
-[
+export const data=[
   {
     "id": "RT3080",
     "createdAt": "2021-08-18",
