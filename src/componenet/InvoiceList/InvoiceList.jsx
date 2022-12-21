@@ -1,11 +1,23 @@
-import React ,{useContext} from 'react'
+import React ,{useContext, useEffect} from 'react'
 import Invoice from './Invoice'
 import { data } from '../../data'
 import { generateColorForStatusIcon,generateColorForStatusText } from '../GlobalComponenet/helper'
  import { AppContext } from '../Store/AppContext'
 
 const InvoiceList = () => {
-   const {filteredinvoicesList}=useContext(AppContext)
+   const {filteredinvoicesList,setInvoicesFilteredList}=useContext(AppContext)
+   const {checkedBoxes}=useContext(AppContext)
+
+   useEffect(()=>{
+     setInvoicesFilteredList(data.filter(invoiceItem=>checkedBoxes.includes(invoiceItem.status)))
+     if (filteredinvoicesList.length===0 || checkedBoxes.length===0){
+      setInvoicesFilteredList(data);
+     }
+   },[checkedBoxes]);
+
+  
+  
+   
 
   return (
     <div className='invoiceList'>

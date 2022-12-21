@@ -1,25 +1,22 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext} from 'react'
 import './filterInvoicesCheckBoxes.css'
 import { AppContext } from '../Store/AppContext';
-import { data } from '../../data';
 
 const FilterInvoiceSelectOption = (props) => {
   const {checkedBoxes,setCheckedBoxes}=useContext(AppContext);
-  const {setInvoicesFilteredList}=useContext(AppContext);
+
 
   const handleCheckBoxInputClicked=(e)=>{
+   
    if(e.target.checked){
     setCheckedBoxes(prv=>[...prv,e.target.value])
-  
+
     
    }else{
     checkedBoxes.splice(checkedBoxes.indexOf(e.target.value), 1)
     setCheckedBoxes(prv=>[...prv])
    }
-   const filtered= data.filter(invoiceItem=>checkedBoxes.includes(invoiceItem.status))
-   if (!checkedBoxes.length===0) {
-     setInvoicesFilteredList(filtered)
-   }
+    
   }
 
     if (props.isVisible){
