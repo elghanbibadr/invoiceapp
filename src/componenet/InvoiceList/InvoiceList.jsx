@@ -5,16 +5,20 @@ import { generateColorForStatusIcon,generateColorForStatusText } from '../Global
  import { AppContext } from '../Store/AppContext'
 
 const InvoiceList = () => {
-   const {filteredinvoicesList,setInvoicesFilteredList}=useContext(AppContext)
-   const {checkedBoxes}=useContext(AppContext)
+   const {filteredinvoicesList,setInvoicesFilteredList,checkedBoxes,invoiceNumber,setInvoiceNumber}=useContext(AppContext)
 
    useEffect(()=>{
      setInvoicesFilteredList(data.filter(invoiceItem=>checkedBoxes.includes(invoiceItem.status)))
      if (filteredinvoicesList.length===0 || checkedBoxes.length===0){
       setInvoicesFilteredList(data);
      }
+   
    },[checkedBoxes]);
 
+
+   useEffect(()=> setInvoiceNumber(filteredinvoicesList.length))
+
+  
   
   
    

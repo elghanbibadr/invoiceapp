@@ -7,9 +7,9 @@ export const AppContext=createContext(null);
 export const AppContextProvider=({children})=>{
     const [them,setThem]=useState('dark');
     const [checkedBoxes,setCheckedBoxes]=useState([]);
-    const [invoiceNumber,setInvoiceNumber]=useState(4);
     const [clickedInvoice,setClickedInvoice]=useState(null);
     const [filteredinvoicesList,setInvoicesFilteredList]=useState(data)
+    const [invoiceNumber,setInvoiceNumber]=useState(7);
 
     const value={
         them,
