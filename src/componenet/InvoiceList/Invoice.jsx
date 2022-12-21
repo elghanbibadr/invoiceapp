@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { AppContext } from '../Store/AppContext';
 // import data from '.'
 import "./invoice.css"
 
 
 const Invoice = (props) => {
+    const {setClickedInvoice}=useContext(AppContext)
     const dueDate = `due ${new Date(props.paymentDue).toDateString()}`;
     const sliced=dueDate.slice(3,7);
     const dueDateFormatted=dueDate.replace(sliced,"");
     
+    const handleInvoiceClicked=(e)=>setClickedInvoice([e.currentTarget.id]);
+    
 
+    
     return (
-        <div className='invoice mt-6  bg-paleBlue p-6 rounded-md cursor-pointer hover:border border-paleCyan '>
+        <div id={props.id} onClick={handleInvoiceClicked} className='invoice mt-6  bg-paleBlue p-6 rounded-md cursor-pointer hover:border border-paleCyan '>
             <h3 className='invoice__id text-white font-bold '><strong className='text-paleCyan text-md mr-1'>#</strong>{props.id}</h3>
             <p className='invoice__ownerName justify-self-end'>{props.clientName}</p>
             <p className='invoice__dueDate '>{dueDateFormatted}</p>
