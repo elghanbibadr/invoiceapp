@@ -1,15 +1,17 @@
 import React,{useContext} from 'react'
 import { AppContext } from '../Store/AppContext'
+import InvoiceDetailsFooter from './InvoiceDetailsFooter'
 import "./invoiceDetailsMain.css"
 const InvoiceDetailsMain = () => {
   const {clickedInvoice,filteredinvoicesList}=useContext(AppContext)
-  const {id,createdAt,paymentDue,description,paymentTerms,clientAddress,clientName,senderAddress,clientEmail,status,total}=filteredinvoicesList.find(item=>item.id===clickedInvoice[0])
+  const {id,createdAt,paymentDue,description,paymentTerms,items,clientAddress,clientName,senderAddress,clientEmail,status,total}=filteredinvoicesList.find(item=>item.id===clickedInvoice[0])
  const {street,city,postCode,country} = clientAddress;
  const {street:senderStreet,city:senderCity,postCode:senderPostCode,country:senderCountry} = clientAddress;
+ 
 //  const {}
- console.log(senderAddress)
+ console.log(items)
   return (
-    <div className='invoiceDetailsMain mx-4 rounded-sm  bg-paleBlue p-3'>
+    <div className='invoiceDetailsMain mx-4 rounded-sm  bg-paleBlue p-3 md:p-10'>
       <div className='invoiceDetail-id'>
         <h3 className='text-white font-bold text-md'><strong className='text-paleCyan mr-1'>#</strong>{id}</h3>
         <p>{description}</p>
@@ -46,7 +48,7 @@ const InvoiceDetailsMain = () => {
        <p className='my-2'>Sent To</p>
         <h2 className='font-bold text-xl mb-4'>{clientEmail}</h2> 
       </div>
-
+     <InvoiceDetailsFooter items={items} total={total}/>
     </div>
   )
 }

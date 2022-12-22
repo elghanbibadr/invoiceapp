@@ -2,8 +2,8 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 1.3rem;
-    padding: 1rem;
 }
+
 
 .invoiceDetailsMain p{
  font-size: 0.8rem;
@@ -22,4 +22,6 @@
     .invcoieDetails-clientAdress{
         justify-self: end;
     }
+
+   
 }
