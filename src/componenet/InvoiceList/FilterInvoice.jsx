@@ -7,9 +7,7 @@ const FilterInvoice = () => {
   const {clickedInvoice,setClickedInvoice}=useContext(AppContext);
   return (
    <div className="mycontainer">
-    {/* <FilterInvoiceHeader/> */}
     {clickedInvoice===null ? [<FilterInvoiceHeader/>,<InvoiceList/>] :  <InvoiceDetails /> }
-    {/* <InvoiceList/> */}
    
     </div>
     
