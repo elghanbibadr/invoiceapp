@@ -1,0 +1,25 @@
+.invoiceDetailsMain{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.3rem;
+    padding: 1rem;
+}
+
+.invoiceDetailsMain p{
+ font-size: 0.8rem;
+}
+
+.invoiceDetail-id,.invcoieDetails-clientAdress{
+    grid-column: span 2;
+  }
+
+
+@media screen and (min-width:786px) {
+    .invoiceDetail-id,.invcoieDetails-clientAdress{
+      grid-column: span 1;
+    }
+    
+    .invcoieDetails-clientAdress{
+        justify-self: end;
+    }
+}
