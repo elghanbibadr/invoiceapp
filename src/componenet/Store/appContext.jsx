@@ -11,7 +11,7 @@ export const AppContextProvider=({children})=>{
     const [filteredinvoicesList,setInvoicesFilteredList]=useState(data)
     const [invoiceNumber,setInvoiceNumber]=useState(7);
     const [editbtntoggled,setEditBtnToggled]=useState(false)
-    const [invoiceInfoMenuVisible,setInvoiceInfoMenuVisible]=use(true)
+    const [invoiceInfoMenuVisible,setInvoiceInfoMenuVisible]=useState(true)
 
     const value={
         them,

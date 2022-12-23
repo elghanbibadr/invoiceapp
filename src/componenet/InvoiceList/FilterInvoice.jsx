@@ -4,7 +4,6 @@ import InvoiceInfo from '../newInvoice/InvoiceInfo'
 import { AppContext } from '../Store/AppContext'
 import FilterInvoiceHeader from './FilterInvoiceHeader'
 import InvoiceList from './InvoiceList'
-import InvoiceInfo from '../newInvoice/InvoiceInfo'
 const FilterInvoice = () => {
   const {clickedInvoice,invoiceInfoMenuVisible,setClickedInvoice}=useContext(AppContext);
   return (
