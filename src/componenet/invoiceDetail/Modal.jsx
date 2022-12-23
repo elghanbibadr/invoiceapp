@@ -18,8 +18,13 @@ const Modal = () => {
     setClickedInvoice(null)
     }
   }
+  const handleOverlayClicked=(e)=>{
+    if (e.target.id==='overlay')
+    setEditBtnToggled(false)
+  
+  };
   return (
-      <div className="overlay">
+      <div id='overlay' onClick={handleOverlayClicked} className="overlay">
         <div className='modal   z-50 bg-paleBlue'>
             <h1>Confirm Deletion</h1>
             <p>
