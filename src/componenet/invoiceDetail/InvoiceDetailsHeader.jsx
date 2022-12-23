@@ -4,8 +4,7 @@ import { AppContext } from '../Store/AppContext'
 import { generateColorForStatusIcon ,generateColorForStatusText } from '../GlobalComponenet/helper';
 
 const InvoiceDetailsHeader = () => {
-  const {clickedInvoice,setClickedInvoice}=useContext(AppContext);
-  const {filteredinvoicesList}=useContext(AppContext);
+  const {clickedInvoice,filteredinvoicesList,setEditBtnToggled}=useContext(AppContext);
   const currentInvoiceDetails=filteredinvoicesList.find(invoice=> invoice.id===clickedInvoice[0])
   const [currentInvoiceStatus,setCurrentStatus]=useState(currentInvoiceDetails.status)
     
@@ -15,14 +14,12 @@ const InvoiceDetailsHeader = () => {
         currentInvoiceDetails.status="paid"
       }
       if (e.target.id==='deleteBtn'){
-        const i=filteredinvoicesList.indexOf(currentInvoiceDetails);
-        filteredinvoicesList.splice(i,1)
-        setClickedInvoice(null)
-        
+        setEditBtnToggled(true)
       }
     }
     
   return (
+    <>
     <div className='bg-paleBlue flex justify-between items-center p-4 rounded-md m-4' >
        <div className='flex items-center'>
         <p className='mr-4 font-semibold'>Status</p>
@@ -39,6 +36,7 @@ const InvoiceDetailsHeader = () => {
         {currentInvoiceStatus==="pending" && <Button id='markAsPaidBtn' name='Mark as paid 'bg='bg-paleCyan'/>}
        </div>
     </div>
+    </>
   )
 }
 

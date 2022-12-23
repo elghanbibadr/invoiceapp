@@ -2,10 +2,9 @@ import React from 'react'
 import InvoiceItem from './InvoiceItem'
 
 const InvoiceDetailsFooter = (props) => {
-    console.log(props.items,props.total)
   return (
-    <div className=' invoiceDetailsFooter  col-span-2  p-6 m-0 bg-paleBlue'>
-        <div className=' visible grid grid-cols-4 opacity-100 invoiceDetailsFooter-header'>
+    <div className=' invoiceDetailsFooter   col-span-2  rounded-sm m-0 bg-paleCyan'>
+        <div className=' visible grid grid-cols-4 p-6  opacity-100 invoiceDetailsFooter-header'>
             <p>Item Name</p>
             <p>QTY.</p>
             <p>Price</p>
@@ -14,7 +13,7 @@ const InvoiceDetailsFooter = (props) => {
       {props.items.map(({name,quantity,price,total},index)=>{
        return  <InvoiceItem key={index} name={name} quantity={quantity} price={price} total={total} />
       })}
-      <div className='bg-darkBlue flex justify-between items-center p-4 mt-8  h-20 md:mr-20' >
+      <div className='bg-darkBlue flex justify-between items-center p-4 mt-8  h-20 ' >
        <p>Amount Due</p>
        <h2 className='font-bold'>${props.total}</h2>
       </div>

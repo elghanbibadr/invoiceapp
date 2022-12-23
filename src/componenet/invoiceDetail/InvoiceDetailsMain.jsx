@@ -7,9 +7,7 @@ const InvoiceDetailsMain = () => {
   const {id,createdAt,paymentDue,description,paymentTerms,items,clientAddress,clientName,senderAddress,clientEmail,status,total}=filteredinvoicesList.find(item=>item.id===clickedInvoice[0])
  const {street,city,postCode,country} = clientAddress;
  const {street:senderStreet,city:senderCity,postCode:senderPostCode,country:senderCountry} = clientAddress;
- 
-//  const {}
- console.log(items)
+
   return (
     <div className='invoiceDetailsMain mx-4 rounded-sm  bg-paleBlue p-3 md:p-10'>
       <div className='invoiceDetail-id'>

@@ -2,8 +2,9 @@ import React, { useContext, useEffect } from 'react'
 import { AppContext } from '../Store/AppContext'
 import InvoiceDetailsMain from './InvoiceDetailsMain';
 import InvoiceDetailsHeader from './InvoiceDetailsHeader';
+import Modal from '../../componenet/invoiceDetail/Modal';
 const InvoiceDetails = () => {
-  const  {clickedInvoice,setClickedInvoice}=useContext(AppContext);
+ const  {clickedInvoice,setClickedInvoice,editbtntoggled}=useContext(AppContext);
   const handleOnBackClick=()=>setClickedInvoice(null);
   return (
     <div className='container'>
@@ -13,6 +14,7 @@ const InvoiceDetails = () => {
       </div>
     <InvoiceDetailsHeader/>
     <InvoiceDetailsMain/>
+     {editbtntoggled && <Modal/>}
     </div>
   )
 }

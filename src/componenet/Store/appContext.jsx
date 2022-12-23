@@ -10,6 +10,8 @@ export const AppContextProvider=({children})=>{
     const [clickedInvoice,setClickedInvoice]=useState(null);
     const [filteredinvoicesList,setInvoicesFilteredList]=useState(data)
     const [invoiceNumber,setInvoiceNumber]=useState(7);
+    const [editbtntoggled,setEditBtnToggled]=useState(false)
+   
 
     const value={
         them,
@@ -21,7 +23,9 @@ export const AppContextProvider=({children})=>{
         checkedBoxes,
         setCheckedBoxes,
         filteredinvoicesList,
-        setInvoicesFilteredList
+        setInvoicesFilteredList,
+        editbtntoggled,
+        setEditBtnToggled
     }
 
     return <AppContext.Provider value={value} >{children}</AppContext.Provider>
