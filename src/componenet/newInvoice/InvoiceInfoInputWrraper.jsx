@@ -1,6 +1,10 @@
 import React from 'react'
 
 const InvoiceInfoInputWrraper = (props) => {
+    if (props.id==='billTo'){
+        return  <p className='text-paleCyan mb-4 font-bold'>Bill To</p>
+
+    }
     if (props.id==='input-select'){
         return(
             <div className='InvoiceInfoInputWrraper '>
