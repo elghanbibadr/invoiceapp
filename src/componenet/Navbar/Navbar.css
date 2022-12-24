@@ -8,7 +8,8 @@ img{
     position: relative;
     overflow: hidden;
   }
-  
+
+ 
   
   .nav__logo-wrapper::after{
   content: "";
@@ -25,7 +26,7 @@ img{
   
   
   .nav__logo-wrapper img{
-    z-index: 888888888;
+     z-index: 88889999;
   }
   
   .nav__logo-wrapper:hover::after{

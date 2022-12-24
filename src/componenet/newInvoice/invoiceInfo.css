@@ -8,14 +8,14 @@
         top: 0;
         bottom: 0;
         background-color: rgba(0, 0, 0, 0.511);
-        z-index: 99999999;
+         z-index: 99999999999999999999999;
         /* display: flex;
         align-items: center;  */
     
     }     
     .invoiceInfo{
         width: 30% !important;
-        top: 0 !important;
+       top: 0 !important;
     }
 }
 
