@@ -3,6 +3,7 @@ import { AppContext } from '../Store/AppContext'
 import InvoiceInfoInputWrraper from './InvoiceInfoInputWrraper'
 import './invoiceInfo.css'
 import ItemInfos from './ItemInfos'
+import Button from '../GlobalComponenet/Button'
 const InvoiceInfo = () => {
   const {setInvoiceInfoMenuVisible}=useContext(AppContext);
   const handleOverlay2Clicked=(e)=>{
@@ -43,6 +44,7 @@ const InvoiceInfo = () => {
           <h2 className='text-paleCyan font-bold mb-4'>Item List</h2>
           <InvoiceInfoInputWrraper id='input-ItemName' type='text' label='Item Name' />
           <ItemInfos />
+          <Button name=' Add New Item' bg='bg-paleBlue flex justify-center w-3/4 m-8 ' />
        
         </div>
 

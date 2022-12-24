@@ -1,8 +1,8 @@
 @media screen and (min-width:786px) {
     .overlay2{
-        position: absolute;
+        position: fixed;
         width: 100%;
-     height: fit-content; 
+        height: 100vh;
         left: 0;
         right: 0;
         top: 0;
@@ -13,11 +13,22 @@
     
     }     
     .invoiceInfo{
-        width: 30% !important;
+        width: 40% !important;
        top: 0 !important;
+       overflow-y: scroll;
     }
 }
 
 .invoiceInfo{
     width: 100%;
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
