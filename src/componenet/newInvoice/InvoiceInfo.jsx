@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { AppContext } from '../Store/AppContext'
 import InvoiceInfoInputWrraper from './InvoiceInfoInputWrraper'
 import { formData } from './FormInputData'
@@ -8,6 +8,9 @@ import Button from '../GlobalComponenet/Button'
 import InvoiceInfoFooter from './InvoiceInfoFooter'
 const InvoiceInfo = () => {
   const {setInvoiceInfoMenuVisible}=useContext(AppContext);
+
+
+
   const handleOverlay2Clicked=(e)=>{
     if (e.target.id==='overlay2'){
       setInvoiceInfoMenuVisible(false);
@@ -18,6 +21,14 @@ const InvoiceInfo = () => {
     setInvoiceInfoMenuVisible(false);
 
   }
+
+  const handleFormSubmit=(e)=>{
+    e.preventDefault();
+    let formData=new FormData(e.target);
+    console.log(Object.fromEntries(formData.entries()))
+  }
+
+
   return (
     
     <div id='overlay2' onClick={handleOverlay2Clicked} className="overlay2">
@@ -28,15 +39,15 @@ const InvoiceInfo = () => {
       </div>
         <h2 className='text-2xl my-6 font-bold'>New Invoice</h2>
 
-        <div className='p-4'>
+        <form onSubmit={handleFormSubmit} className='p-4'>
         <p className='text-paleCyan mb-4 font-bold'>Bill From</p>
-           {formData.map(({id,type,label},index)=>{
-            return <InvoiceInfoInputWrraper key={index} id={id} type={type} label={label} />
+           {formData.map(({id,type,label,name},index)=>{
+            return <InvoiceInfoInputWrraper   id={id} i={index} name={name} type={type}  label={label}   />
            })}
           <ItemInfos />
           <Button name=' Add New Item' bg='bg-paleBlue flex justify-center w-3/4 m-8 ' />
           <InvoiceInfoFooter />
-        </div>
+        </form>
 
         </div>
 
