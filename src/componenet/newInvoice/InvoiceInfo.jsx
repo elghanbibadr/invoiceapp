@@ -1,13 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { AppContext } from '../Store/AppContext'
-import InvoiceInfoInputWrraper from './InvoiceInfoInputWrraper'
-import { formData } from './FormInputData'
 import './invoiceInfo.css'
-import ItemInfos from './ItemInfos'
-import Button from '../GlobalComponenet/Button'
-import InvoiceInfoFooter from './InvoiceInfoFooter'
+
+import InvoiceInfoForm from './InvoiceInfoForm'
 const InvoiceInfo = () => {
-  const {setInvoiceInfoMenuVisible}=useContext(AppContext);
 
 
 
@@ -22,11 +18,7 @@ const InvoiceInfo = () => {
 
   }
 
-  const handleFormSubmit=(e)=>{
-    e.preventDefault();
-    let formData=new FormData(e.target);
-    console.log(Object.fromEntries(formData.entries()))
-  }
+ 
 
 
   return (
@@ -39,16 +31,10 @@ const InvoiceInfo = () => {
       </div>
         <h2 className='text-2xl my-6 font-bold'>New Invoice</h2>
 
-        <form onSubmit={handleFormSubmit} className='p-4'>
+       
         <p className='text-paleCyan mb-4 font-bold'>Bill From</p>
-           {formData.map(({id,type,label,name},index)=>{
-            return <InvoiceInfoInputWrraper   id={id} i={index} name={name} type={type}  label={label}   />
-           })}
-          <ItemInfos />
-          <Button name=' Add New Item' bg='bg-paleBlue flex justify-center w-3/4 m-8 ' />
-          <InvoiceInfoFooter />
-        </form>
-
+         <InvoiceInfoForm />
+         
         </div>
 
     </div>

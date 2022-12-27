@@ -1,32 +1,7 @@
 import React, { useState } from 'react'
 
-const InvoiceInfoInputWrraper = ({id,label,name,type,i}) => {
-const [value,setValue]=useState('');
-const [formValues,setFormValues]=useState({
-    streetAdress:'',
-    country:'',
-    city:'',
-    postCode:'',
-    clientName:'',
-    clientEmail:'',
-    clientStreetAdress:'',
-    clientCountry:'',
-    clientCity:'',
-    invoiceDate:'',
-    selectedChoice:'',
-    projectDesc:'',
-    itemName:''
-
-  });
-
-     const handleChange=(e)=>{
-        setValue(e.target.value)
-    let items=Object.keys(formValues);
-    let searched=items[i];
-    // formValues[searched]=value;
-     setFormValues({... formValues,name:e.target.value})
-     console.log(formValues)
-      }
+const InvoiceInfoInputWrraper = ({id,label,name,type,handleChange}) => {
+   
 
 
     if (id==='billTo'){
@@ -37,7 +12,7 @@ const [formValues,setFormValues]=useState({
         return(
             <div className='InvoiceInfoInputWrraper '>
     <label  htmlFor={id} >{label}</label>
-    <select className='p-3 my-4 w-full font-bold  bg-paleBlue' name={name} id={id} type={type}  >
+    <select className='p-3 my-4 w-full font-bold  bg-paleBlue'  name={name} onChange={handleChange} id={id} type={type}  >
         <option className='font-bold'>Net 1 day</option>
         <option className='font-bold'>Net 7 day</option>
         <option className='font-bold '>Net 14 day</option>
@@ -49,7 +24,7 @@ const [formValues,setFormValues]=useState({
         return (
           <div className='InvoiceInfoInputWrraper '>
           <label  htmlFor={id} >{label}</label>
-          <input className='p-3 my-4 w-full  bg-paleBlue' id={id} type={type} name={name} value={value} onChange={handleChange} /> 
+          <input className='p-3 my-4 w-full  bg-paleBlue' id={id} type={type} name={name}  onChange={handleChange} /> 
           </div>
         )
     }

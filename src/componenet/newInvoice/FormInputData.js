@@ -90,6 +90,6 @@ export const formData=[
     id:'input-ItemName',
     type:'text',
     label:'Item Name',
-    name:'ItemName'
+    name:'itemName'
     },
 ]
