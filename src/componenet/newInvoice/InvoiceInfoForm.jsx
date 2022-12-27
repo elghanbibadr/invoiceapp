@@ -5,10 +5,10 @@ import InvoiceInfoFooter from './InvoiceInfoFooter';
 import Button from '../GlobalComponenet/Button';
 import ItemInfos from './ItemInfos';
 import { AppContext } from '../Store/AppContext';
-
+import { data } from '../../data';
 
 const InvoiceInfoForm = () => {
-  const {setInvoiceInfoMenuVisible}=useContext(AppContext);
+  const {setInvoiceInfoMenuVisible}=useContext(AppContext)
   const [formValues,setFormValues]=useState({
     streetAdress:'',
     country:'',
@@ -29,7 +29,7 @@ const InvoiceInfoForm = () => {
 
 
    
-  const handleInputChanegs=(e)=>{
+  const handleInputChange=(e)=>{
     const {name,value}=e.target;
     setFormValues({...formValues ,[name]:value})
   }
@@ -42,13 +42,47 @@ const InvoiceInfoForm = () => {
        
       }
     }
-    console.log('yoo')
+    const createdInvoice={
+      id:'',
+      "createdAt":"2928-5",
+      "paymentDue":'56-65',
+      "description":formValues.projectDesc,
+      "paymentTerms":"1",
+      "clientName":formValues.clientName,
+      "clientEmail":formValues.clientEmail,
+      "status":"pending",
+      "senderAddress":{
+       "street":formValues.streetAdress,
+       "city":formValues.city,
+       "postCode":formValues.postCode,
+       "country":formValues.country
+      },
+      "clientAddress":{
+        "street":formValues.clientStreetAdress,
+        "city":formValues.clientCity,
+        "postCode":formValues.postCode,
+        "country":formValues.clientCountry,
+
+      },
+      "items":[
+        {
+          "name":formValues.itemName,
+          "quantity":'1',
+          "price":1999,
+          'total':777
+        }
+      ]
+    };
+
     
+    data.push(createdInvoice);
+    setInvoiceInfoMenuVisible(false)
   }
+
   return (
     <form onSubmit={handleFormSubmit}>
       {formData.map(({id,type,label,name},index)=>{
-            return <InvoiceInfoInputWrraper    id={id} i={index} name={name} handleChange={handleInputChanegs} type={type} value={formValues.name}    label={label}   />
+            return <InvoiceInfoInputWrraper    id={id} i={index} name={name} handleChange={handleInputChange} type={type} value={formValues.name}    label={label}   />
            })}
             <ItemInfos />
           <Button name=' Add New Item' bg='bg-paleBlue flex justify-center w-3/4 m-8 ' />

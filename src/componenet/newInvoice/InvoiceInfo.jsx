@@ -5,7 +5,7 @@ import './invoiceInfo.css'
 import InvoiceInfoForm from './InvoiceInfoForm'
 const InvoiceInfo = () => {
 
-
+  const {setInvoiceInfoMenuVisible}=useContext(AppContext)
 
   const handleOverlay2Clicked=(e)=>{
     if (e.target.id==='overlay2'){

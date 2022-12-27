@@ -25,7 +25,7 @@ const Invoice = (props) => {
                 </svg>
                 <span className={`${props.statusValues.bg} font-bold ml-2`}>{props.statusValues.name}</span>
             </div>
-            <h2 className='invoice__amount font-bold '>{`$${props.total.toFixed(0)}`} </h2>
+            <h2 className='invoice__amount font-bold '>{`$${props.total || '0'}`} </h2>
         </div>
     )
 }
