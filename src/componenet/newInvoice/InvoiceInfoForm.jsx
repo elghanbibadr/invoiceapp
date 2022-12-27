@@ -2,7 +2,6 @@ import React, {useState,useContext} from 'react'
 import InvoiceInfoInputWrraper from './InvoiceInfoInputWrraper';
 import { formData } from './FormInputData'
 import InvoiceInfoFooter from './InvoiceInfoFooter';
-import Button from '../GlobalComponenet/Button';
 import ItemInfos from './ItemInfos';
 import { AppContext } from '../Store/AppContext';
 import { data } from '../../data';
@@ -44,8 +43,8 @@ const InvoiceInfoForm = () => {
     }
     const createdInvoice={
       id:'',
-      "createdAt":"2928-5",
-      "paymentDue":'56-65',
+      "createdAt":formValues.invoiceDate,
+      "paymentDue":new Date().toDateString(),
       "description":formValues.projectDesc,
       "paymentTerms":"1",
       "clientName":formValues.clientName,
@@ -85,7 +84,6 @@ const InvoiceInfoForm = () => {
             return <InvoiceInfoInputWrraper    id={id} i={index} name={name} handleChange={handleInputChange} type={type} value={formValues.name}    label={label}   />
            })}
             <ItemInfos />
-          <Button name=' Add New Item' bg='bg-paleBlue flex justify-center w-3/4 m-8 ' />
           <InvoiceInfoFooter />
     </form>
   )

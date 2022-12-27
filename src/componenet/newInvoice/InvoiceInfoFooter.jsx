@@ -13,7 +13,6 @@ const InvoiceInfoFooter = () => {
   return (
     <div onClick={handleInvoiceInfoBtnsClicked} className="invoiceInfo__footer flex justify-evenly">
             <Button id='btn-discard' name='Discard' bg='bg-paleBlue'/>
-            <Button name='Save as Draft' bg="bg-paleBlue" />
             <Button name='Save & Send' bg="bg-paleCyan" />
     </div>
   )

@@ -31,7 +31,6 @@ const InvoiceDetailsHeader = () => {
             </div>
        </div>
        <div onClick={handleButtonClick} className='flex justify-between '>
-        <Button id='editBtn' name='Edit'  />
         <Button id='deleteBtn' name='Delete' bg='bg-paleRed' />
         {currentInvoiceStatus==="pending" && <Button id='markAsPaidBtn' name='Mark as paid 'bg='bg-paleCyan'/>}
        </div>
