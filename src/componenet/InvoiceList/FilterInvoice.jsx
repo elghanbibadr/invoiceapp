@@ -5,7 +5,7 @@ import { AppContext } from '../Store/AppContext'
 import FilterInvoiceHeader from './FilterInvoiceHeader'
 import InvoiceList from './InvoiceList'
 const FilterInvoice = () => {
-  const {clickedInvoice,invoiceInfoMenuVisible,setClickedInvoice}=useContext(AppContext);
+  const {clickedInvoice,invoiceInfoMenuVisible}=useContext(AppContext);
   return (
    <div className="mycontainer">
     {clickedInvoice===null ? [<FilterInvoiceHeader/>,<InvoiceList/>] :  <InvoiceDetails /> }
